@@ -14,8 +14,6 @@ import static org.junit.Assert.*;
  */
 public class CClienteTest {
     
-    public CClienteTest() {
-    }
     CCuentaB a = new CCuentaB();
     ArrayList<CCuentaB> b = new ArrayList<>();
     CTarjeta tarjeta = new CTarjeta();
@@ -187,7 +185,6 @@ public class CClienteTest {
         b.add(a);
         int cantidad = 50;
         cli.ingresarDinero(b, 0, cantidad);
-        //b.get(0).operacionCuenta(cantidad, true);
         assertEquals(50,b.get(0).getSaldo());
     }
 

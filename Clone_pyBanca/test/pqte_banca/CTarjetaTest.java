@@ -12,38 +12,15 @@ import static org.junit.Assert.*;
  * @author socek
  */
 public class CTarjetaTest {
+    CTarjeta tar = new CTarjeta(800,500);
     
-    public CTarjetaTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     /**
      * Test of getLimiteCajero method, of class CTarjeta.
      */
     @Test
     public void testGetLimiteCajero() {
         System.out.println("getLimiteCajero");
-        CTarjeta instance = new CTarjeta();
-        int expResult = 0;
-        int result = instance.getLimiteCajero();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(800,tar.getLimiteCajero());
     }
 
     /**
@@ -52,11 +29,8 @@ public class CTarjetaTest {
     @Test
     public void testSetLimiteCajero() {
         System.out.println("setLimiteCajero");
-        int limiteCajero = 0;
-        CTarjeta instance = new CTarjeta();
-        instance.setLimiteCajero(limiteCajero);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        tar.setLimiteCajero(100);
+        assertNotEquals(800,tar.getLimiteCajero());
     }
 
     /**
@@ -65,12 +39,7 @@ public class CTarjetaTest {
     @Test
     public void testGetLimiteInternet() {
         System.out.println("getLimiteInternet");
-        CTarjeta instance = new CTarjeta();
-        int expResult = 0;
-        int result = instance.getLimiteInternet();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(500,tar.getLimiteInternet());
     }
 
     /**
@@ -79,11 +48,8 @@ public class CTarjetaTest {
     @Test
     public void testSetLimiteInternet() {
         System.out.println("setLimiteInternet");
-        int limiteInternet = 0;
-        CTarjeta instance = new CTarjeta();
-        instance.setLimiteInternet(limiteInternet);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        tar.setLimiteInternet(100);
+        assertNotEquals(500,tar.getLimiteInternet());
     }
     
 }
