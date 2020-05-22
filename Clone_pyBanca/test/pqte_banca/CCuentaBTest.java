@@ -13,25 +13,11 @@ import static org.junit.Assert.*;
  * @author socek
  */
 public class CCuentaBTest {
+    CTarjeta tar = new CTarjeta(200,500);
+    ArrayList<CTarjeta> tars = new ArrayList<>();
+    CCuentaB cu = new CCuentaB(200,30,"1/1/1");
     
-    public CCuentaBTest() {
-    }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of getSaldo method, of class CCuentaB.
@@ -39,12 +25,7 @@ public class CCuentaBTest {
     @Test
     public void testGetSaldo() {
         System.out.println("getSaldo");
-        CCuentaB instance = new CCuentaB();
-        int expResult = 0;
-        int result = instance.getSaldo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(200,cu.getSaldo());
     }
 
     /**
@@ -53,11 +34,8 @@ public class CCuentaBTest {
     @Test
     public void testSetSaldo() {
         System.out.println("setSaldo");
-        int saldo = 0;
-        CCuentaB instance = new CCuentaB();
-        instance.setSaldo(saldo);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        cu.setSaldo(2000);
+        assertNotEquals(200,cu.getSaldo());
     }
 
     /**
@@ -66,12 +44,7 @@ public class CCuentaBTest {
     @Test
     public void testGetLimite() {
         System.out.println("getLimite");
-        CCuentaB instance = new CCuentaB();
-        int expResult = 0;
-        int result = instance.getLimite();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(30,cu.getLimite());
     }
 
     /**
@@ -80,11 +53,8 @@ public class CCuentaBTest {
     @Test
     public void testSetLimite() {
         System.out.println("setLimite");
-        int limite = 0;
-        CCuentaB instance = new CCuentaB();
-        instance.setLimite(limite);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        cu.setLimite(55);
+        assertNotEquals(50,cu.getLimite());
     }
 
     /**
@@ -93,12 +63,7 @@ public class CCuentaBTest {
     @Test
     public void testGetFechaApertura() {
         System.out.println("getFechaApertura");
-        CCuentaB instance = new CCuentaB();
-        String expResult = "";
-        String result = instance.getFechaApertura();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("1/1/1",cu.getFechaApertura());
     }
 
     /**
@@ -107,11 +72,8 @@ public class CCuentaBTest {
     @Test
     public void testSetFechaApertura() {
         System.out.println("setFechaApertura");
-        String fechaApertura = "";
-        CCuentaB instance = new CCuentaB();
-        instance.setFechaApertura(fechaApertura);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        cu.setFechaApertura("23/05/2020");
+        assertNotEquals("1/1/1",cu.getFechaApertura());    
     }
 
     /**
@@ -120,12 +82,9 @@ public class CCuentaBTest {
     @Test
     public void testGetTarjeta() {
         System.out.println("getTarjeta");
-        CCuentaB instance = new CCuentaB();
-        ArrayList<CTarjeta> expResult = null;
-        ArrayList<CTarjeta> result = instance.getTarjeta();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        tars.add(0,tar);
+        cu.setTarjeta(tars);
+        assertEquals(tars,cu.getTarjeta());
     }
 
     /**
@@ -134,11 +93,10 @@ public class CCuentaBTest {
     @Test
     public void testSetTarjeta() {
         System.out.println("setTarjeta");
-        ArrayList<CTarjeta> tarjeta = null;
-        CCuentaB instance = new CCuentaB();
-        instance.setTarjeta(tarjeta);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        tars.add(0,tar);
+        cu.setTarjeta(tars);
+        ArrayList<CTarjeta> tars1 = new ArrayList<>();
+        assertNotEquals(tars1,cu.getTarjeta());
     }
 
     /**
@@ -147,27 +105,40 @@ public class CCuentaBTest {
     @Test
     public void testOperacionCuenta() {
         System.out.println("operacionCuenta");
-        int cantidad = 0;
-        boolean ingresar = false;
-        CCuentaB instance = new CCuentaB();
-        instance.operacionCuenta(cantidad, ingresar);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        cu.operacionCuenta(100, true);
+        assertEquals(300,cu.getSaldo());
+
     }
+     /**
+     * Test of operacionCuenta1 method, of class CCuentaB.
+     */
+        @Test
+        public void testOperacionCuenta1() {
+        System.out.println("operacionCuenta");
+        cu.operacionCuenta(100, false);
+        assertEquals(100,cu.getSaldo());
+        }
 
     /**
-     * Test of operacionTarjeta method, of class CCuentaB.
+     * Test of operacionTarjeta method by cajero, of class CCuentaB.
      */
     @Test
     public void testOperacionTarjeta() {
         System.out.println("operacionTarjeta");
-        int cantidad = 0;
-        int nroTarj = 0;
-        boolean cajero = false;
-        CCuentaB instance = new CCuentaB();
-        instance.operacionTarjeta(cantidad, nroTarj, cajero);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        tars.add(0,tar);
+        cu = new CCuentaB(1000, 200, "1/1/1",tars);
+        cu.operacionTarjeta(200, 0, true);
+        assertEquals(800,cu.getSaldo());
     }
-    
+        /**
+     * Test of operacionTarjeta1 method by internet, of class CCuentaB.
+     */
+    @Test
+    public void testOperacionTarjeta1() {
+        System.out.println("operacionTarjeta");
+        tars.add(0,tar);
+        cu = new CCuentaB(1000, 200, "1/1/1",tars);
+        cu.operacionTarjeta(150, 0, false);
+        assertEquals(850,cu.getSaldo());
+    }
 }
