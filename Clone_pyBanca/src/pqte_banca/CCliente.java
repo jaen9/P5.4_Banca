@@ -82,18 +82,19 @@ public class CCliente {
     //Constructores
     public CCliente(){}
 
-    public CCliente(String p1, String p2, String p3, String p4, int p5,
-                    int p6, ArrayList<CCuentaB> p7) {
+    public CCliente(String p1, String p2, String p3, String p4, String p5, 
+            int p6,int p7, ArrayList<CCuentaB> p8) {
         nombre = p1;
         apellido1 = p2;
         apellido2 = p3;
         direccion = p4;
-        tlf = p5;
-        edad = p6;
-        cuenta = p7;
+        nif = p5;
+        tlf = p6;
+        edad = p7;
+        cuenta = p8;
     }
 
-
+    //Metodos
     public void ingresarDinero (ArrayList<CCuentaB> cuenta,int nroCuenta, int cantidad){
         boolean ingresar = true;
         cuenta.get(nroCuenta).operacionCuenta(cantidad, ingresar);
