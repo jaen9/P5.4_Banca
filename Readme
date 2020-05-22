@@ -1,0 +1,7 @@
+DESCRIPCIÓN
+
+Es la práctica final de la asignatura Entornos.
+En ella diseñamos un sistema de banca. Para ello desarrollamos los casos de uso y su diagrama de clases.
+Trabajaremos con GITHUB para ir haciendo push del código java que crearemos en Netbeans basándonos en el diagrama de clases.
+Finalmente implementaremos las clases de prueba para verificar su correcto funcionamiento junto con la documentación javadoc.
+Todo esto se recogerá en un informe final donde añadiremos cualquier tipo de problema encontrado a la hora de realizar la práctica.
