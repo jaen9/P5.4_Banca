@@ -1,8 +1,5 @@
 package pqte_banca;
 
-
-
-
 public class CTarjeta {
     //Atributos
     private int limiteCajero;
