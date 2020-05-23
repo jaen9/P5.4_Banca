@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * y realizar un pago por cajero o por internet con una de sus tarjetas que están 
  * vinculadas a la cuenta. 
  * 
- * @author socek
+ * @author Sergio Jaen
  * @version 1.0
  * @since 1.0
  */
