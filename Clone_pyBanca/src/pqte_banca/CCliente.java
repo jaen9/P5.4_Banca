@@ -6,7 +6,9 @@ import java.util.ArrayList;
 /**
  * Clase Cliente que contiene los atributos nombre, apellido1, apellido2, direccion
  * nif, tlf, edad y un número de cuentas indefinido que puede ser desde ninguna
- * hasta infinitas.
+ * hasta infinitas. El cliente puede ingresar/retirar dinero de una de sus cuentas
+ * y realizar un pago por cajero o por internet con una de sus tarjetas que están 
+ * vinculadas a la cuenta. 
  * 
  * @author socek
  * @version 1.0
