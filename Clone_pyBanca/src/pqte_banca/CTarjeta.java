@@ -20,8 +20,8 @@ public class CTarjeta {
     
     /**
      * constructor con todos sus parámetros
-     * @param p1
-     * @param p2
+     * @param p1 limiteCajero
+     * @param p2 limiteInternet
      */
     public CTarjeta(int p1, int p2) {
         limiteCajero = p1;
