@@ -130,7 +130,7 @@ public class CCuentaBTest {
         cu.operacionTarjeta(200, 0, true);
         assertEquals(800,cu.getSaldo());
     }
-        /**
+     /**
      * Test of operacionTarjeta1 method by internet, of class CCuentaB.
      */
     @Test

@@ -28,7 +28,7 @@ public class CGestorB {
     
     }//modificarPerfil
     
-    public void crearPerfil (CCliente p1,
+    public CCliente crearPerfil (
             String nomb,
             String ape1,
             String ape2,
@@ -37,8 +37,8 @@ public class CGestorB {
             int tlf,
             int edad,
             ArrayList<CCuentaB> cue){
-
-    ArrayList<CCuentaB> cuenta  = new ArrayList<>();
-    p1 = new CCliente(nomb,ape1,ape2,dir,nif,tlf,edad,cue);
+        CCliente cliente = new CCliente(nomb,ape1,ape2,dir,nif,tlf,edad,cue);    
+        return cliente;
+    
     }//crearPerfil
 }

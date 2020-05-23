@@ -14,24 +14,10 @@ import static org.junit.Assert.*;
  */
 public class CGestorBTest {
     
-    public CGestorBTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+    CCuentaB a = new CCuentaB();
+    ArrayList<CCuentaB> b = new ArrayList<>();
+    CCliente cli = new CCliente("sergio","jaen","marx","calle"
+                                ,"222",65,27,b);
 
     /**
      * Test of modificarPerfil method, of class CGestorB.
@@ -39,19 +25,16 @@ public class CGestorBTest {
     @Test
     public void testModificarPerfil() {
         System.out.println("modificarPerfil");
-        CCliente p1 = null;
-        String nomb = "";
-        String ape1 = "";
-        String ape2 = "";
-        String dir = "";
-        String nif = "";
-        int tlf = 0;
-        int edad = 0;
-        ArrayList<CCuentaB> cue = null;
-        CGestorB instance = new CGestorB();
-        instance.modificarPerfil(p1, nomb, ape1, ape2, dir, nif, tlf, edad, cue);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        CGestorB gest = new CGestorB();
+        gest.modificarPerfil(cli, "a", "b", "c", "d", "e", 1, 2, b);
+        assertEquals("a",cli.getNombre());
+        assertEquals("b",cli.getApellido1());
+        assertEquals("c",cli.getApellido2());
+        assertEquals("d",cli.getDireccion());
+        assertEquals("e",cli.getNif());
+        assertEquals(1,cli.getTlf());
+        assertEquals(2,cli.getEdad());
+        assertEquals(b,cli.getCuenta());
     }
 
     /**
@@ -60,19 +43,17 @@ public class CGestorBTest {
     @Test
     public void testCrearPerfil() {
         System.out.println("crearPerfil");
-        CCliente p1 = null;
-        String nomb = "";
-        String ape1 = "";
-        String ape2 = "";
-        String dir = "";
-        String nif = "";
-        int tlf = 0;
-        int edad = 0;
-        ArrayList<CCuentaB> cue = null;
-        CGestorB instance = new CGestorB();
-        instance.crearPerfil(p1, nomb, ape1, ape2, dir, nif, tlf, edad, cue);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        CGestorB gest = new CGestorB();
+        CCliente cliente;
+        cliente = gest.crearPerfil("a", "jaen", "c", "d", "222", 65, 27, b);
+        assertNotEquals(cliente.getNombre(),cli.getNombre());
+        assertEquals(cliente.getApellido1(),cli.getApellido1());
+        assertNotEquals(cliente.getApellido2(),cli.getApellido2());
+        assertNotEquals(cliente.getDireccion(),cli.getDireccion());
+        assertEquals(cliente.getNif(),cli.getNif());
+        assertEquals(cliente.getTlf(),cli.getTlf());
+        assertEquals(cliente.getEdad(),cli.getEdad());
+        assertEquals(cliente.getCuenta(),cli.getCuenta());
     }
     
 }
